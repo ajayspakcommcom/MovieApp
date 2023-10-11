@@ -3,7 +3,6 @@ const Colors = {
     blackOlive: '#3C3C3C',
     philippineGray: '#8C8C8C',
     lotion: '#FCFCFC',
-    blackOlive: '#3C3C3C',
     venetianRed: '#CC1512',
     sunglow: '#FFCF2C',
 };

@@ -12,7 +12,7 @@ const HomeScreen = () => {
         try {
             await AsyncStorage.setItem('@storage_Key', value);
         } catch (e) {
-            // Saving error
+            console.log(e);
         }
     };
 
@@ -24,7 +24,7 @@ const HomeScreen = () => {
                 setData(value);
             }
         } catch (e) {
-            // Reading error
+            console.log(e);
         }
     };
 
