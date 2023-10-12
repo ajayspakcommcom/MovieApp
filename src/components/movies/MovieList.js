@@ -5,7 +5,7 @@ import MovieItem from './MovieItem';
 import { useDispatch } from 'react-redux';
 import { addToWatchList } from '../../store/slices/movieSlice';
 
-const MovieList = ({ data, isFlag = true }) => {
+const MovieList = ({ data, isFlag = true, onItemId }) => {
 
     const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ const MovieList = ({ data, isFlag = true }) => {
     }, [watchList]);
 
     const onDetailPressHandler = (id) => {
-        navigation.navigate('DetailScreen', { id: id });
+        onItemId(id);
     };
 
 

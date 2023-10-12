@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, ScrollView, Image, FlatList, Platform, Pressabl
 import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../../styles/Colors';
 
-
 const MovieItem = ({ name, src, icon = 'bookmarks', onPress, paragraph, onBookMarkPress, onDetailPress, isFlag = true }) => {
     return (
         <View style={styles.imgWrapper}>
@@ -26,6 +25,7 @@ const styles = StyleSheet.create({
         width: '33.33%',
         height: 220,
         padding: 5,
+        marginBottom: 10,
         ...Platform.select({
             android: {
                 elevation: 60,

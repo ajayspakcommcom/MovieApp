@@ -33,9 +33,13 @@ const HomeScreen = ({ navigation, route }) => {
         getData();
     }, [storeData]);
 
+    const onDetailNavigation = (id) => {
+        navigation.navigate('DetailScreen', { id: id });
+    };
+
     return (
         <>
-            <MovieList data={MOVIES} />
+            <MovieList data={MOVIES} onItemId={onDetailNavigation} />
         </>
     )
 }
