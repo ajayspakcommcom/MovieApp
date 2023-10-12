@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-native';
+import { MOVIES } from '../../data/movies';
 import MovieList from '../../components/movies/MovieList';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation, route }) => {
 
     const [data, setData] = useState('');
 
@@ -34,7 +35,7 @@ const HomeScreen = () => {
 
     return (
         <>
-            <MovieList />
+            <MovieList data={MOVIES} />
         </>
     )
 }

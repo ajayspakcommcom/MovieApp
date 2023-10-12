@@ -6,15 +6,6 @@ import { View, Text, StyleSheet, ScrollView, Image, Button, Platform } from "rea
 
 const IndexScreen = () => {
 
-    const showNotification = () => {
-        PushNotification.localNotification({
-            channelId: 'your-channel-id', // Provide channel ID
-            title: 'Hello',
-            message: 'This is a local notification!',
-        });
-    };
-
-
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 

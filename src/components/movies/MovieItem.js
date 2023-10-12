@@ -4,13 +4,18 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../../styles/Colors';
 
 
-const MovieItem = ({ name, src, icon = 'bookmarks', onPress, paragraph, onBookMarkPress }) => {
+const MovieItem = ({ name, src, icon = 'bookmarks', onPress, paragraph, onBookMarkPress, onDetailPress, isFlag = true }) => {
     return (
         <View style={styles.imgWrapper}>
-            <Pressable style={styles.bookMark} onPress={onBookMarkPress}>
-                <Icon name={icon} size={24} color={Colors.sunglow} />
+            {
+                isFlag &&
+                <Pressable style={styles.bookMark} onPress={onBookMarkPress}>
+                    <Icon name={icon} size={30} color={Colors.sunglow} />
+                </Pressable>
+            }
+            <Pressable onPress={onDetailPress}>
+                <Image source={src} style={styles.img} />
             </Pressable>
-            <Image source={src} style={styles.img} />
         </View>
     );
 };

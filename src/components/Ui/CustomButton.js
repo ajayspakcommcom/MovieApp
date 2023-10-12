@@ -5,7 +5,7 @@ import Fonts from '../../styles/Fonts';
 import Styles from '../../styles/Styles';
 
 
-const CustomButton = ({ text, onPressHanlder, textSize = 18 }) => {
+const CustomButton = ({ text, onPressHanlder, textSize = 18, style }) => {
 
     const styles = StyleSheet.create({
         button: {
@@ -28,8 +28,8 @@ const CustomButton = ({ text, onPressHanlder, textSize = 18 }) => {
 
 
     return (
-        <Pressable style={[styles.button]} android_ripple={{ ...styles.rippleEffect }} onPress={onPressHanlder}>
-            <Text style={styles.text}>{text}</Text>
+        <Pressable style={[styles.button, style]} android_ripple={{ ...styles.rippleEffect }} onPress={onPressHanlder}>
+            <Text style={[styles.text]}>{text}</Text>
         </Pressable>
     )
 }
