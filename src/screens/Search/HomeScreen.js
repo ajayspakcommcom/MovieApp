@@ -50,7 +50,6 @@ const HomeScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
 
 
-
     searchWrapper: {
         paddingVertical: 30,
         paddingHorizontal: 15

@@ -10,20 +10,16 @@ import { AirbnbRating } from 'react-native-ratings';
 
 const SwipperList = ({ userData }) => {
 
-    const [data, setData] = useState([]);
-    const [pageViewIndxPos, setPageViewIndxPos] = useState(null);
+    const [data, setData] = useState(REVIEW);
+    const [pageViewIndxPos, setPageViewIndxPos] = useState(0);
 
     useLayoutEffect(() => {
 
-        //console.log('Swipper');
-
-        setData(REVIEW);
-        const indxPos = REVIEW.findIndex(item => item.id === userData.id);
-        console.log(indxPos);
+        const indxPos = data.findIndex(item => item.id === userData.id);
+        console.log('index', indxPos);
         setPageViewIndxPos(indxPos);
 
     }, []);
-
 
 
     return (
@@ -31,7 +27,7 @@ const SwipperList = ({ userData }) => {
         <>
             <View style={styles.container}>
                 {pageViewIndxPos &&
-                    <PagerView style={styles.pagerView} initialPage={pageViewIndxPos}>
+                    <PagerView style={styles.pagerView} initialPage={0}>
 
                         {REVIEW.map(item =>
                             <View style={styles.page} key={item.id}>
@@ -67,112 +63,107 @@ const SwipperList = ({ userData }) => {
                                         </View>
                                     </View>
                                 </View>
-                            </View>)}
+                            </View>)
+                        }
 
                     </PagerView>
                 }
             </View>
-
-            {/* <View style={styles.container}>
-                <Text style={{ color: 'red' }}>Hello World</Text>
-            </View> */}
         </>
     );
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
 
-    container: {
-        flex: 1,
-        backgroundColor: Colors.chineseBlack,
-        borderRadius: 20,
-        padding: 15
-    },
+    // container: {
+    //     flex: 1,
+    //     backgroundColor: Colors.chineseBlack,
+    //     borderRadius: 20,
+    //     padding: 15
+    // },
 
-    pagerView: {
-        flex: 1
-    },
+    // pagerView: {
+    //     flex: 1
+    // },
 
-    page: {
-        paddingHorizontal: 10
-    },
+    // page: {
+    //     paddingHorizontal: 10
+    // },
 
-    pageItem: {
-        flex: 1,
-        borderRadius: 5,
-        backgroundColor: Colors.philippineGray,
-        paddingHorizontal: 15
-    },
+    // pageItem: {
+    //     flex: 1,
+    //     borderRadius: 5,
+    //     backgroundColor: Colors.philippineGray,
+    //     paddingHorizontal: 15
+    // },
 
-    text: {
-        fontSize: 30,
-        textAlign: 'center',
-        color: Colors.blackOlive
-    },
+    // text: {
+    //     fontSize: 30,
+    //     textAlign: 'center',
+    //     color: Colors.blackOlive
+    // },
 
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
+    // header: {
+    //     flexDirection: 'row',
+    //     alignItems: 'center'
+    // },
 
-    nameText: {
-        color: Colors.lotion,
-        paddingLeft: 15,
-        fontSize: 18
-    },
+    // nameText: {
+    //     color: Colors.lotion,
+    //     paddingLeft: 15,
+    //     fontSize: 18
+    // },
 
-    reviewParaWrapper: {
-        paddingVertical: 15
-    },
+    // reviewParaWrapper: {
+    //     paddingVertical: 15
+    // },
 
-    reviewPara: {
-        lineHeight: 20,
-        color: Colors.lotion,
-        textAlign: 'justify'
-    },
+    // reviewPara: {
+    //     lineHeight: 20,
+    //     color: Colors.lotion,
+    //     textAlign: 'justify'
+    // },
 
-    footerWrapper: {
-        paddingVertical: 20,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
+    // footerWrapper: {
+    //     paddingVertical: 20,
+    //     justifyContent: 'center',
+    //     alignItems: 'center'
+    // },
 
-    stylesfooterHeading: {
-        fontSize: 20,
-        color: Colors.lotion,
-        fontWeight: '600'
-    },
+    // stylesfooterHeading: {
+    //     fontSize: 20,
+    //     color: Colors.lotion,
+    //     fontWeight: '600'
+    // },
 
-    reviewBottomBorder: {
-        paddingTop: 5,
-        borderBottomColor: Colors.sunglow,
-        borderBottomWidth: 2
-    },
+    // reviewBottomBorder: {
+    //     paddingTop: 5,
+    //     borderBottomColor: Colors.sunglow,
+    //     borderBottomWidth: 2
+    // },
 
-    footerFooterSection: {
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        flexDirection: 'row',
-        paddingTop: 15
-    },
+    // footerFooterSection: {
+    //     alignItems: 'flex-start',
+    //     justifyContent: 'flex-start',
+    //     flexDirection: 'row',
+    //     paddingTop: 15
+    // },
 
-    footerRatingTextWrapper: {
-        paddingRight: 15
-    },
+    // footerRatingTextWrapper: {
+    //     paddingRight: 15
+    // },
 
-    footerRatingText: {
-        color: Colors.lotion,
-        fontWeight: '600',
-        fontSize: 25
-    }
+    // footerRatingText: {
+    //     color: Colors.lotion,
+    //     fontWeight: '600',
+    //     fontSize: 25
+    // }
 });
 
 export default SwipperList;
 
 
 
-// https://www.npmjs.com/package/react-native-swiper-flatlist
+
 
 
