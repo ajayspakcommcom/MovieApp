@@ -79,7 +79,7 @@ const DetailScreen = ({ navigation, route }) => {
                             <Icon name={'close'} size={30} color={Colors.philippineGray} />
                         </Pressable>
                     </View>
-                    <SwipperList userData={reviewUser} />
+                    {reviewUser && <SwipperList userData={reviewUser} />}
                 </View>
             </Modal>
 
