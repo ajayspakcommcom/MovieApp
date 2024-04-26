@@ -10,6 +10,7 @@ import MyListNavigation from "./src/navigation/MyListNavigation";
 import SearchNavigation from "./src/navigation/SearchNavigation";
 import ProfileNavigation from "./src/navigation/ProfileNavigation";
 import LoginRegisterScreen from "./src/screens/Auth/LoginRegisterScreen";
+import IndexScreen from "./src/screens/Dummy/IndexScreen";
 import { useSelector } from 'react-redux';
 
 
@@ -74,6 +75,11 @@ const App = () => {
                     <Stack.Screen name="LoginRegisterScreen">
                         {props => <LoginRegisterScreen {...props} onLogin={handleLogin} />}
                     </Stack.Screen>
+
+                    {/* <Stack.Screen name="IndexScreen">
+                        {props => <IndexScreen {...props} />}
+                    </Stack.Screen> */}
+
                 </Stack.Navigator>
             }
 
